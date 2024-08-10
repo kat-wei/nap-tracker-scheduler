@@ -1,0 +1,33 @@
+
+.card {
+    background: #fff;
+    margin: 0 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.star {
+    font-size: 1.7vh;
+    cursor: pointer;
+}
+    
+.one {
+    color: #e8bcf0;
+}
+    
+.two {
+    color: #ca5cdd;
+}
+    
+.three {
+    color: #b100cd;
+}
+    
+.four {
+    color: #7600bc;
+}
+    
+.five {
+    color: #4c00b0;
+}
+    
+    

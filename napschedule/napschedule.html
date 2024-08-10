@@ -3,25 +3,22 @@
     <head>
         <!-- elements not visible on page -->
         <title> Nap Scheduler </title>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="napschedule.css">
     </head>
     <body>
+        <a href="/naptrack/11-nap-tracker.html">
+            <img class="zzz-icon" src="/images/moon-zzz-fill.svg">
+            <div>Nap Tracker</div>
+        </a>
         <!-- contains all elements visible on the page -->
         <p class="title">
             Nap Scheduler
         </p>
-        <!-- html tag <opening tag>  </closing tag> -->
-        <!-- can write css  code in style -->
-        
-        <!-- <div class="schedule">
-            implement this later
-        </div> -->
         <div class="center">
             <div class="command-box">
                 <p class="instructions">
                     Instructions:
-                    input <strong>when you woke up</strong>, and <strong>when you plan to go to bed</strong>. this will automatically adjust the calendar.
-                    next drag on the calendar to mark when you are busy.
+                    input <strong>when you woke up</strong>, and <strong>when you plan to go to bed</strong>.
                     finally, click calculate to see what the optimal time for you to take a nap is! (or see if it isn’t optimal at all)
                 </p>
                 <div class="button-container">
@@ -84,41 +81,18 @@
                         <option selected value="22">10:00 PM</option>
                         <option value="23">11:00 PM</option>
                     </select>
+
+                    <a href="results.html">
+                        <button class="purple-button" >
+                            set
+                        </button>
+                    </a>
                     
-                    <button class="purple-button" onclick="saveTimes()">
-                        set
-                    </button>
                 </div>
             
             </div>
         </div>
-        <script>
-            function saveTimes() {
-                // const wakeTime = document.getElementById('wake-time').value;
-                // const sleepTime = document.getElementById('sleep-time').value;
-                // console.log(wakeTime);
-                // console.log(sleepTime);
-
-                // localStorage.setItem('wakeTime', wakeTime);
-                // localStorage.setItem('sleepTime', sleepTime);
-                window.location.href = "schedule.html";
-            }
-
-            // // Retrieve the saved times from localStorage
-            // function loadTimes() {
-            //     const wakeTime = localStorage.getItem('wakeTime');
-            //     const sleepTime = localStorage.getItem('sleepTime');
-            //     if (wakeTime !== null) {
-            //         document.getElementById('wake-time').value = wakeTime;
-            //     }
-            //     if (sleepTime !== null) {
-            //         document.getElementById('sleep-time').value = sleepTime;
-            //     }
-            // }
-
-            // // Load the saved times when the page loads
-            // window.onload = loadTimes;
-        </script>
+        <script src="/napschedule/napschedule.js"></script>
         
     </body>
 </html>

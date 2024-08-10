@@ -1,0 +1,79 @@
+body {
+    font-family: sans-serif;
+    background-color: #C4C5FF;
+    color: #FFF;
+}
+.background{
+    background-color: #413f6b;
+}
+.pink-background{
+    background-color: #FCE9FF;
+    color: #413F6B;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.title {
+    font-size: 30px;
+    font-family: "Genos", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+    color: #413f6b;
+    text-align: center;
+}
+
+.dp-button{
+    background-color: #413F6B;
+    border: none;
+    border-radius: 5px;
+    color:#ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    /* margin is the space around */
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    transition: box-shadow 0.15s;
+    align-self: center;
+        
+}
+
+.delete-button{
+    background-color: #C4C5FF;
+    border: none;
+    border-radius: 5px;
+    color:#ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    /* margin is the space around */
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    transition: box-shadow 0.15s;
+    align-self: center;
+        
+}
+
+.nap-grid, .nap-input-grid{
+    display: grid;
+    grid-template-columns: 200px 150px 100px 140px 150px 120px;
+    column-gap: 10px;
+    row-gap: 10px;
+    text-align: center;
+    font-optical-sizing: auto;
+   
+}
+
+.nap-input-grid{
+    margin-bottom: 5px;
+    margin-top: 10px;
+
+}
+
+.clock-icon{
+    width: 50px;
+}

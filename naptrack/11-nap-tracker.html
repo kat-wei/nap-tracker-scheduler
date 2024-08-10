@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nap Tracker</title>
+        <link rel = "stylesheet" href = "11-nap-tracker.css">
+        <link rel = "stylesheet" href= "star.css">
+    </head>
+        
+        <body>
+            <a href="/napschedule/napschedule.html">
+                <img class="clock-icon" src="/images/clock.png">
+                <div>Nap Scheduler</div>
+            </a>
+            <p class="title">Nap Tracker</p>
+            <div class="background">
+                <div class = "nap-input-grid">
+                    <p>Nap Name</p>
+                    <p>Date</p>
+                    <p>Time</p>
+                    <p>Duration (mins)</p>
+                    <p>Quality of Sleep</p>
+                </div>
+
+            </div>
+            
+            <div class = "nap-input-grid pink-background">
+                <input placeholder="nap name" class = 'js-nap-input' maxlength="30">
+                <input type="date" class = 'js-nap-date-input'>
+                <input type="time" class = 'js-nap-time-input'>
+                <input placeholder="insert duration" type="number" class = 'js-nap-duration-input'>
+                <!-- <input type="number" class = 'js-nap-quality-input'> -->
+                <div class="card" class = 'js-nap-quality-input'>
+                    <span onclick="gfg(1)"
+                        class="star">★
+                    </span>
+                    <span onclick="gfg(2)"
+                        class="star">★
+                    </span>
+                    <span onclick="gfg(3)"
+                        class="star">★
+                    </span>
+                    <span onclick="gfg(4)"
+                        class="star">★
+                    </span>
+                    <span onclick="gfg(5)"
+                        class="star">★
+                    </span>
+                    <!-- <h3 id="output">
+                        Rating is: 0/5
+                    </h3> -->
+                </div>
+                <button onclick= "
+                addNap();
+                " class="dp-button">
+                    Add
+                </button>
+                <div class = 'js-nap-list nap-grid'>
+
+                </div>
+            </div>
+            <script src = "11-nap-tracker.js"></script>
+        </body>
+    
+</html>
