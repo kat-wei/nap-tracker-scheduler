@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nap Scheduler</title>
+        <link rel="stylesheet" href="index.css">
+        <style>
+            .timeslot {
+                width: 100px;
+                height: 20px;
+                border: 1px solid black;
+                cursor: pointer;
+                margin-bottom: 2px;
+            }
+            .available {
+                background-color: rgb(51, 153, 0);
+            }
+            .unavailable {
+                background-color: rgb(255, 222, 222);
+            }
+        </style>
+    </head>
+    <body>
+        <p class="title">Nap Scheduler</p>
+        <div class="center">
+            <div class="schedule">
+                <div class="legend">
+                    <span class="unavailable">Unavailable</span>
+                    <span class="available">Available</span>
+                </div>
+                <p>Click and Drag to Toggle; Saved Immediately</p>
+                <div id="timeslots"></div>
+            </div>
+        </div>
+        
+        <script>
+            const startTime = 9; // 9:00 AM
+            const endTime = 17; // 5:00 PM
+            const timeContainer = document.getElementById('timeslots');
+
+            function createTimeslot(hour) {
+                const timeslot = document.createElement('div');
+                timeslot.classList.add('timeslot', 'unavailable');
+                timeslot.dataset.time = hour;
+                timeslot.textContent = formatTime(hour);
+                timeslot.onmousedown = toggleAvailability;
+                timeslot.ontouchstart = toggleAvailability;
+                timeContainer.appendChild(timeslot);
+            }
+
+            function formatTime(hour) {
+                const period = hour < 12 ? 'AM' : 'PM';
+                const displayHour = hour % 12 === 0 ? 12 : hour % 12;
+                return `${displayHour}:00 ${period}`;
+            }
+
+            function toggleAvailability(event) {
+                const timeslot = event.target;
+                if (timeslot.classList.contains('unavailable')) {
+                    timeslot.classList.remove('unavailable');
+                    timeslot.classList.add('available');
+                } else {
+                    timeslot.classList.remove('available');
+                    timeslot.classList.add('unavailable');
+                }
+                saveAvailability(timeslot.dataset.time, timeslot.classList.contains('available'));
+            }
+
+            function saveAvailability(hour, isAvailable) {
+                localStorage.setItem(`timeslot_${hour}`, isAvailable ? 'available' : 'unavailable');
+            }
+
+            function loadAvailability() {
+                for (let hour = startTime; hour <= endTime; hour++) {
+                    createTimeslot(hour);
+                    const timeslot = document.querySelector(`[data-time="${hour}"]`);
+                    const availability = localStorage.getItem(`timeslot_${hour}`);
+                    if (availability === 'available') {
+                        timeslot.classList.remove('unavailable');
+                        timeslot.classList.add('available');
+                    }
+                }
+            }
+
+            window.onload = loadAvailability;
+        </script>
+    </body>
+</html>

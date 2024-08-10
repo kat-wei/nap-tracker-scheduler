@@ -1,0 +1,86 @@
+.command-box{
+    width: 350px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.center{
+    display:flex;
+    justify-content: center;
+    
+}
+
+.button-container{
+    background-color:#fce9ff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom:20px;
+    border-style: solid;
+    border-color: #413f6b;
+    border-width: 3px;
+    border-radius: 15px;
+}
+
+
+
+.title {
+    font-size: 30px;
+    font-family: "Genos", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+    color: #413f6b;
+    text-align: center;
+}
+.instructions {
+    /* paragraphs come with default spacing already */
+    font-family: sans-serif;
+    width: 600;
+    line-height: 24px;
+}
+.time-select{
+    color:#ffffff;
+    background-color: #565678;
+    border: none;
+    border-radius: 5px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.purple-button{
+    background-color: #565678;
+    border: none;
+    border-radius: 5px;
+    color:#ffffff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    /* margin is the space around */
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    transition: box-shadow 0.15s;
+    align-self: center;
+    
+    /* natural looking shadow... take this out later */
+    
+}
+
+.purple-button:hover{
+    /* pseudoclass (adds extra styles in a certain context) */
+    /* these styles only apply to hovering over the button */
+    opacity: 0.9;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    
+
+}
+
+/* meh opt out of this one maybe */
+.purple-button:active{
+    opacity: 0.6;
+
+}
