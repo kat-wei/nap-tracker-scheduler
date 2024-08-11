@@ -10,7 +10,6 @@
             <img class="zzz-icon" src="/images/moon-zzz-fill.svg">
             <div>Nap Tracker</div>
         </a>
-        <!-- contains all elements visible on the page -->
         <p class="title">
             Nap Scheduler
         </p>
@@ -50,12 +49,12 @@
                         <option value="21">9:00 PM</option>
                         <option value="22">10:00 PM</option>
                         <option value="23">11:00 PM</option>
-                    </select>    
+                    </select>
                             
                     <p>
                         when you plan to go to bed
                     </p>
-                    <select id="sleep-time" class = "time-select">
+                    <select id="bed-time" class = "time-select">
                         <option value="0">12:00AM</option>
                         <option value="1">1:00 AM</option>
                         <option value="2">2:00 AM</option>
@@ -83,7 +82,7 @@
                     </select>
 
                     <a href="results.html">
-                        <button class="purple-button" >
+                        <button class="purple-button" onclick="saveTimes()">
                             set
                         </button>
                     </a>
@@ -92,7 +91,19 @@
             
             </div>
         </div>
-        <script src="/napschedule/napschedule.js"></script>
+        <script>
+            function saveTimes(){
+                var wakeTime = document.getElementById('wake-time').value;
+                var bedTime = document.getElementById('bed-time').value;
+
+                //store value in localStorage
+                localStorage.setItem('wake-time', wakeTime);
+                localStorage.setItem('bed-time', bedTime);
+                
+                //redirect to results page
+                window.location.href = 'results.html'
+            }
+        </script>
         
     </body>
 </html>

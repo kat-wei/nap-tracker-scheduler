@@ -33,6 +33,7 @@
         <div class="power-nap">
             <p>
                 Power Nap (~20 min)
+                
             </p>
 
         </div>
@@ -42,5 +43,13 @@
             </p>
         </div>
     </body>
+    <script>
+        window.onload = function(){
+            var wakeTime = localStorage.getItem('wake-time');
+            var bedTime = localStorage.getItem('bed-time');
+            console.log(wakeTime);
+            console.log(bedTime);
+        }
+    </script>
 
 </html>

@@ -12,6 +12,8 @@ body{
     font-style: italic;
     color: #fce9ff;
     text-align: center;
+    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff,
+        1px 1px 5px #fce9ff, 1px 1px 5px #fce9ff;
 }
 
 .time-select{
