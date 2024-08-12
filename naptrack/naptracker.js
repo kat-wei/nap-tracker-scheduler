@@ -7,6 +7,8 @@ let input = JSON.parse(localStorage.getItem("score")) || {
     };
 //end of new
 
+loadFromStorage();
+
 const napList = [
     {
         name: 'after work nap',
@@ -52,6 +54,7 @@ function renderNapList(){
         </button>    
         `;
         napListHTML += html;
+        saveToStorage();
     })
 
     document.querySelector('.js-nap-list').innerHTML = napListHTML;
@@ -84,7 +87,6 @@ function addNap() {
         duration: duration,
         qualityOfSleep: quality
     });
-    localStorage.setItem("input", JSON.stringify(input));
 
     inputName.value = '';
     inputDate.value = '';
@@ -93,6 +95,39 @@ function addNap() {
 
     renderNapList();
 }
+
+
+function loadFromStorage(){
+    input = JSON.parse(localStorage.getItem('input'));
+    //default
+    if (!input) {
+        input = [{
+            name: 'after work nap',
+            date: '2024-08-05',
+            time: '3:00 PM',
+            duration: '20 minutes',
+            qualityOfSleep: `
+            <div class="card">
+                <span class="star three">★</span>
+                <span class="star three">★</span>
+                <span class="star three">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                </span>
+            </div>
+            `
+        }];
+    }
+}
+
+function saveToStorage() {
+    localStorage.setItem('input', JSON.stringify(input));
+}
+
+
+
+
+//STARS CODE
 
 
 // To access the stars
@@ -168,5 +203,4 @@ function updateStars() {
 }
 
 updateStars();
-
 
