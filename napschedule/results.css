@@ -3,6 +3,11 @@ body{
     font-family: sans-serif;
 }
 
+.center{
+    display:flex;
+    justify-content: center;
+}
+
 .header-link {
     cursor: pointer;
     text-decoration: none;
@@ -23,14 +28,29 @@ body{
         1px 1px 5px #fce9ff, 1px 1px 5px #fce9ff;
 }
 
-
-
 .command-box{
     width: 350px;
     display: inline-block;
+    
 }
 
-.button-container{
+.wake-box, .bed-box{
+    color: #fff;
+    background-color: #565678;
+    width: 195px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+
+    /* Flexbox centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wake-bed-container{
+    margin-right: 10px;
     background-color:#fce9ff;
     text-align: center;
     padding-top: 20px;
@@ -39,6 +59,7 @@ body{
     border-color: #fff;
     border-width: 3px;
     border-radius: 15px;
+    
 }
 
 /* container */
@@ -54,5 +75,6 @@ body{
     border-color: #fff;
     border-width: 3px;
     border-radius: 15px;
+    margin-left: 10px;
     
 }

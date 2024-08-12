@@ -28,8 +28,22 @@ function convertTime(time){
 wakeTime = localStorage.getItem('wake-time');
 bedTime = localStorage.getItem('bed-time');
 
-document.querySelector('.js-wake-time').innerHTML = convertTime(wakeTime);
-document.querySelector('.js-bed-time').innerHTML = convertTime(bedTime);
+// .wake-box, .bed-box{
+//     color: #fff;
+//     background-color: #565678;
+//     width: 195px;
+//     height: 50px;
+// }
+
+document.querySelector('.js-wake-time').innerHTML = `
+    <div class="wake-box">
+        ${convertTime(wakeTime)}
+    </div>`;
+document.querySelector('.js-bed-time').innerHTML = `
+    <div class="bed-box">
+        ${convertTime(bedTime)}
+    </div>
+`;
 console.log(convertTime(wakeTime));
 console.log(Number(bedTime));
 

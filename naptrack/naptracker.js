@@ -101,8 +101,6 @@ function saveToStorage() {
 
 loadFromStorage();
 
-
-
 //STARS CODE
 
 

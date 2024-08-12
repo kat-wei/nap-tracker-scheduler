@@ -2,16 +2,32 @@ body {
     font-family: sans-serif;
     background-color: #C4C5FF;
     color: #FFF;
+    
 }
-.background{
+
+.grid-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.background-inputs{
     background-color: #413f6b;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 3px;
 }
+
 .pink-background{
     background-color: #FCE9FF;
     color: #413F6B;
     padding-top: 10px;
     padding-bottom: 10px;
+    
 }
+
 .title {
     font-size: 30px;
     font-family: "Genos", sans-serif;
@@ -60,26 +76,27 @@ body {
 
 .nap-grid, .nap-input-grid{
     display: grid;
-    grid-template-columns: 200px 150px 100px 140px 150px 120px;
-    column-gap: 10px;
-    row-gap: 10px;
+    grid-template-columns: 200px 150px 100px 140px 180px 120px;
+    column-gap: 12px;
+    row-gap: 12px;
     text-align: center;
     font-optical-sizing: auto;
-   
+
+    padding-left: 10px;
+    padding-right:10px;
+    
 }
 
-.nap-input-grid{
+/* .nap-input-grid{
     margin-bottom: 5px;
     margin-top: 10px;
-
-}
+} */
 
 .link-container{
     position: absolute;
     right: 0px;
     display: block;
     padding-right: 10px;
-
 }
 
 .clock-icon{
