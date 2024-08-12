@@ -1,3 +1,7 @@
+body {
+    font-family: sans-serif;
+}
+
 .command-box{
     width: 350px;
     display: inline-block;
@@ -84,7 +88,18 @@
     opacity: 0.6;
 }
 
+.link-container{
+    position: absolute;
+    right: 0px;
+    display: block;
+    padding-right: 10px;
+}
+
+.link-to-tracker{
+    display: inline;
+}
+
 /* link to nap tracker page */
 .zzz-icon{
-    width:50px;
+    width:20px;
 }

@@ -77,8 +77,6 @@ function addNap() {
     </div>
     `
     
-    
-    
     input = napList.push({
         name: name,
         date: date,

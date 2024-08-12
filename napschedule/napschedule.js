@@ -33,9 +33,37 @@ document.querySelector('.js-bed-time').innerHTML = convertTime(bedTime);
 console.log(convertTime(wakeTime));
 console.log(Number(bedTime));
 
-function calculate(){
-    
-    console.log(convertTime(wakeTime));
+//calculating ideal nap segment
+
+function calculate(wakeTimeMT, bedTimeMT){
+    let results;
+    wakeTimeMT = Number(localStorage.getItem('wake-time'));
+    bedTimeMT = Number(localStorage.getItem('bed-time'));
+    const beginTime = wakeTimeMT+6;
+    const endTime = bedTimeMT-7;
+    console.log(beginTime);
+    console.log(endTime);
+
+    if(endTime<=beginTime){
+        return "Looks like taking a nap isn't optimal today! Try again tomorrow :("
+    }
+
+    //1. power nap, 2. power nap and full cycle sleep
+    const difference = endTime-beginTime;
+
+    //custom text for each
+    if(difference===1){
+        return 'Take a power nap! ' + 
+            convertTime(beginTime) + ' - ' + convertTime(endTime) +
+            'A power nap is around between 15 to 20 minutes. Avoid napping over 30 minutes. ' +
+            'The benefits are: ';
+    }else{
+        //add more info about full cycle nap! fix formatting in css
+        return 'Take a power nap or a full cycle nap between the times: ' + 
+        convertTime(beginTime) + ' - ' + convertTime(endTime) +
+        'A power nap is around between 15 to 20 minutes. Avoid napping over 30 minutes. ' +
+        'The benefits are: ';
+    }
 }
 
 document.querySelector('.js-calculated').innerHTML = calculate();
