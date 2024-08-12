@@ -5,38 +5,36 @@
         <link rel="stylesheet" href="results.css">
     </head>
     <body>
-        
-        <p class="title">
-            Nap Scheduler
-        </p>
+        <a href="/napschedule/napschedule.html" class="header-link">
+            <p class="title">
+                Nap Scheduler
+            </p>
+        </a>
         <div class="command-box">
             <div class="button-container">
                 <p>
                     when you woke up
                 </p>
                 <div class="js-wake-time">
-                    insert time 
                 </div>
                 <p>
                     when you plan to go to bed
                 </p>
                 <div class="js-bed-time">
-                    insert time
                 </div>
             </div>
         
         </div>
-
-        <div class="js-updated"></div>
-        
-        <div class="power-nap">
+        <div class="ideal-nap-container">
             <p>
                 Power Nap (~20 min)/Full Cycle Sleep (~90 min)
+                <div class="js-calculated">
+
+                </div>
             </p>
 
         </div>
     </body>
-    <script src="calculations.js"></script>
     <script src="napschedule.js"></script>
     <script>
         window.onload = function(){

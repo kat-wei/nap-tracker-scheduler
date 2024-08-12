@@ -3,8 +3,15 @@ body{
     font-family: sans-serif;
 }
 
+.header-link {
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
 
 .title {
+    cursor: pointer;
+    text-decoration: none;
     font-size: 30px;
     font-family: "Genos", sans-serif;
     font-optical-sizing: auto;
@@ -16,47 +23,28 @@ body{
         1px 1px 5px #fce9ff, 1px 1px 5px #fce9ff;
 }
 
+
+
 .command-box{
     width: 350px;
     display: inline-block;
-    vertical-align: middle;
-    background-color: #fce9ff;
 }
 
-.time-select{
-    color:#ffffff;
-    background-color: #565678;
-    border: none;
-    border-radius: 5px;
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-/* container */
-.wake-up-bed-time{
+.button-container{
     background-color:#fce9ff;
-    color:#413f6b;
     text-align: center;
+    padding-top: 20px;
     padding-bottom:20px;
     border-style: solid;
     border-color: #fff;
     border-width: 3px;
     border-radius: 15px;
+}
+
+/* container */
+.ideal-nap-container{
     display: inline-block;
-    margin-bottom: 40px;
-}
-.wubt-display{
-    display: flex;
-    justify-content: center;
-
-}
-.power-nap{
-    margin-right: 30px;
-}
-
-.power-nap, .full-cycle-nap{
+    width: 400px;
     background-color:#c4c5ff;
     color: #fff;
     text-align: center;
@@ -66,5 +54,5 @@ body{
     border-color: #fff;
     border-width: 3px;
     border-radius: 15px;
-    display: inline-block;
+    
 }

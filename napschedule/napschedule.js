@@ -33,6 +33,14 @@ document.querySelector('.js-bed-time').innerHTML = convertTime(bedTime);
 console.log(convertTime(wakeTime));
 console.log(Number(bedTime));
 
+function calculate(){
+    
+    console.log(convertTime(wakeTime));
+}
+
+document.querySelector('.js-calculated').innerHTML = calculate();
+
+
 
 
 
