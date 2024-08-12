@@ -1,17 +1,6 @@
-let input = JSON.parse(localStorage.getItem("score")) || {
-    name: '',
-    date: '',
-    time: '',
-    duration: '',
-    qualityOfSleep: ''
-    };
-//end of new
 
-loadFromStorage();
-
-const napList = [
-    {
-        name: 'after work nap',
+let napList = JSON.parse(localStorage.getItem("napList")) || [{
+    name: 'after work nap',
         date: '2024-08-05',
         time: '3:00 PM',
         duration: '20 minutes',
@@ -25,11 +14,10 @@ const napList = [
             </span>
         </div>
         `
-    }
-];
+    }];
+//end of new
 
 let currentQualityRating = 3;
-
 
 renderNapList();
 
@@ -46,9 +34,7 @@ function renderNapList(){
         <div> ${duration} </div>
         <div> ${qualityOfSleep} </div>
         <button onclick="
-            napList.splice(${index}, 1)
-            renderNapList();
-            localStorage.removeItem(${index});
+            deleteNap(${index})
             "class="delete-button"> 
                 Delete 
         </button>    
@@ -96,34 +82,24 @@ function addNap() {
     renderNapList();
 }
 
+function deleteNap(index){
+    napList.splice(index, 1);
+    renderNapList();
+}
 
 function loadFromStorage(){
-    input = JSON.parse(localStorage.getItem('input'));
-    //default
-    if (!input) {
-        input = [{
-            name: 'after work nap',
-            date: '2024-08-05',
-            time: '3:00 PM',
-            duration: '20 minutes',
-            qualityOfSleep: `
-            <div class="card">
-                <span class="star three">★</span>
-                <span class="star three">★</span>
-                <span class="star three">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                </span>
-            </div>
-            `
-        }];
+    let storedNaps = JSON.parse(localStorage.getItem('napList'));
+    if (storedNaps) {
+        napList = storedNaps;
     }
+    renderNapList();
 }
 
 function saveToStorage() {
-    localStorage.setItem('input', JSON.stringify(input));
+    localStorage.setItem('napList', JSON.stringify(napList));
 }
 
+loadFromStorage();
 
 
 
