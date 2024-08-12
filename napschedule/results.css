@@ -16,6 +16,13 @@ body{
         1px 1px 5px #fce9ff, 1px 1px 5px #fce9ff;
 }
 
+.command-box{
+    width: 350px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #fce9ff;
+}
+
 .time-select{
     color:#ffffff;
     background-color: #565678;

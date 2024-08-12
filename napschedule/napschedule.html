@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- elements not visible on page -->
         <title> Nap Scheduler </title>
         <link rel="stylesheet" href="napschedule.css">
     </head>
     <body>
-        <a href="/naptrack/11-nap-tracker.html">
+        <a href="/naptrack/1naptracker.html">
             <img class="zzz-icon" src="/images/moon-zzz-fill.svg">
             <div>Nap Tracker</div>
         </a>
@@ -82,7 +81,7 @@
                     </select>
 
                     <a href="results.html">
-                        <button class="purple-button" onclick="saveTimes()">
+                        <button class="purple-button js-updated" onclick="saveTimes()">
                             set
                         </button>
                     </a>
@@ -91,20 +90,7 @@
             
             </div>
         </div>
-        <script>
-            function saveTimes(){
-                var wakeTime = document.getElementById('wake-time').value;
-                var bedTime = document.getElementById('bed-time').value;
-
-                //store value in localStorage
-                localStorage.setItem('wake-time', wakeTime);
-                localStorage.setItem('bed-time', bedTime);
-                
-                //redirect to results page
-                window.location.href = 'results.html'
-            }
-        </script>
-        
+        <script src="calculations.js"></script>
     </body>
 </html>
 

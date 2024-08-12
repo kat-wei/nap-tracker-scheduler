@@ -9,40 +9,35 @@
         <p class="title">
             Nap Scheduler
         </p>
-        <div class="wubt-display">
-            <div class="wake-up-bed-time">
+        <div class="command-box">
+            <div class="button-container">
                 <p>
                     when you woke up
                 </p>
-                <div class="time-select">
-    
+                <div class="js-wake-time">
+                    insert time 
                 </div>
                 <p>
                     when you plan to go to bed
                 </p>
-                <div class="time-select">
-    
+                <div class="js-bed-time">
+                    insert time
                 </div>
-                
-                
-    
             </div>
-
+        
         </div>
+
+        <div class="js-updated"></div>
         
         <div class="power-nap">
             <p>
-                Power Nap (~20 min)
-                
+                Power Nap (~20 min)/Full Cycle Sleep (~90 min)
             </p>
 
         </div>
-        <div class="full-cycle-nap">
-            <p>
-                Full Cycle Sleep (~90 min)
-            </p>
-        </div>
     </body>
+    <script src="calculations.js"></script>
+    <script src="napschedule.js"></script>
     <script>
         window.onload = function(){
             var wakeTime = localStorage.getItem('wake-time');

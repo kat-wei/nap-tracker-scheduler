@@ -1,30 +1,40 @@
+let wakeTime;
+let bedTime;
 
-
-function saveTimes() {
-    const wakeTime = document.getElementById('wake-time').value;
-    const sleepTime = document.getElementById('sleep-time').value;
-    // console.log(wakeTime);
-    // console.log(sleepTime);
-
-    localStorage.setItem('wakeTime', wakeTime);
-    localStorage.setItem('sleepTime', sleepTime);
+function saveTimes(){
+    wakeTime = document.getElementById('wake-time').value;
+    bedTime = document.getElementById('bed-time').value;
     
+    //store value in localStorage
+    localStorage.setItem('wake-time', wakeTime);
+    localStorage.setItem('bed-time', bedTime);
+
+    //redirect to results page
+    window.location.href = 'results.html'
 }
 
-function loadTimes(){
-    const wakeTime = localStorage.getItem('wakeTime');
-    const sleepTime = localStorage.getItem('sleepTime');
-
-    console.log(wakeTime);
-    console.log(sleepTime);
+//takes in string (wakeTime and bedTime) and MT to ST
+function convertTime(time){
+    let standard = Number(time);
+    if(standard<=12){
+        standard = standard.toString()+":00 AM";
+    }
+    else {
+        standard = (standard-12).toString()+":00 PM"
+    }
+    return standard;
 }
 
-saveTimes();
-loadTimes();
+wakeTime = localStorage.getItem('wake-time');
+bedTime = localStorage.getItem('bed-time');
 
-// // Retrieve the saved times from localStorage
-// function loadTimes() {
-//     const wakeTime = localStorage.getItem('wakeTime');
-//     const sleepTime = localStorage.getItem('sleepTime');
+document.querySelector('.js-wake-time').innerHTML = convertTime(wakeTime);
+document.querySelector('.js-bed-time').innerHTML = convertTime(bedTime);
+console.log(convertTime(wakeTime));
+console.log(Number(bedTime));
 
-// }
+
+
+
+
+
