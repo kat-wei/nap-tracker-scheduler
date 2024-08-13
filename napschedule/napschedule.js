@@ -60,7 +60,7 @@ function calculate(wakeTimeMT, bedTimeMT){
 
     if(endTime<=beginTime){
         return "Looks like taking a nap isn't optimal today! Try again tomorrow :("
-    }
+    };
 
     //1. power nap, 2. power nap and full cycle sleep
     const difference = endTime-beginTime;
@@ -68,16 +68,51 @@ function calculate(wakeTimeMT, bedTimeMT){
     //custom text for each
     if(difference===1){
         return 'Take a power nap! ' + 
-            convertTime(beginTime) + ' - ' + convertTime(endTime) +
-            'A power nap is around between 15 to 20 minutes. Avoid napping over 30 minutes. ' +
-            'The benefits are: ';
+            `<div class="ideal-box">
+                ${convertTime(beginTime) + ' - ' + convertTime(endTime)}
+            </div>
+            ` +
+            `<hr color="#fff">`+
+            generatePNText();
     }else{
         //add more info about full cycle nap! fix formatting in css
         return 'Take a power nap or a full cycle nap between the times: ' + 
-        convertTime(beginTime) + ' - ' + convertTime(endTime) +
-        'A power nap is around between 15 to 20 minutes. Avoid napping over 30 minutes. ' +
-        'The benefits are: ';
+        `<div class="ideal-box">
+            ${convertTime(beginTime) + ' - ' + convertTime(endTime)}
+        </div>
+        ` +
+        `<hr color="#fff">`+
+        generatePNText() +
+        `<hr color="#fff">`+
+         generateFCText();
     }
+}
+
+function generatePNText(){
+    let text = '';
+    text = "A power nap is around between 15 to 20 minutes. Avoid napping over 30 minutes. " +
+    "The benefits are: " +
+    `<ul class="bullet-points">
+        <li> <strong> Boosts Alertness and Focus:</strong> A short nap can improve your alertness and concentration without entering deeper sleep stages, making it easier to wake up and get back to work quickly. </li>
+        <li> <strong> Enhances Mood:</strong> Power naps can help reduce stress and improve your mood by giving your brain a quick break. </li>
+        <li> <strong>Increases Energy Levels:</strong> Even a brief rest can replenish your energy, helping you to overcome afternoon fatigue. </li>
+    </ul>`;
+
+    return text;
+
+}
+
+function generateFCText(){
+    let text = '';
+    text = "A full cycle nap is around 90 to 110 minutes long. A full cyle nap allows you to go" +
+    " through all the stages of sleep, and you'll wake up feeling refreshed and alert. The benefits are: " +
+    `<ul class="bullet-points">
+        <li><strong>Memory Consolidation:</strong> A full cycle nap allows for both deep and REM sleep, which are crucial for memory retention and learning.</li>
+        <li><strong>Physical Restoration:</strong> This nap length supports muscle recovery, immune function, and overall physical rejuvenation by going through all sleep stages.</li>
+        <li><strong>Improves Creativity and Problem-Solving:</strong> The REM stage in a full cycle nap boosts creativity and enhances your ability to solve complex problems.</li>
+    </ul>`;
+
+    return text;
 }
 
 document.querySelector('.js-calculated').innerHTML = calculate();

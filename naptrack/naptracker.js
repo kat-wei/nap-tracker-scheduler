@@ -15,7 +15,6 @@ let napList = JSON.parse(localStorage.getItem("napList")) || [{
         </div>
         `
     }];
-//end of new
 
 let currentQualityRating = 3;
 
@@ -28,10 +27,10 @@ function renderNapList(){
         const{name, date, time, duration, qualityOfSleep} = napObject;
         //generating the HTML
         const html = `
-        <div> ${name} </div>
-        <div> ${date} </div>
-        <div> ${time} </div>
-        <div> ${duration} </div>
+        <div class="input-card"> ${name} </div>
+        <div class="input-card"> ${date} </div>
+        <div class="input-card"> ${time} </div>
+        <div class="input-card"> ${duration} </div>
         <div> ${qualityOfSleep} </div>
         <button onclick="
             deleteNap(${index})
@@ -165,7 +164,6 @@ function remove() {
 	}
 }
 
-//buggy
 function updateStars() {
     for (let i = 0; i < stars.length; i++) {
         if (i < currentQualityRating) {

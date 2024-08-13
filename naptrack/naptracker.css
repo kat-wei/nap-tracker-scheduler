@@ -2,7 +2,14 @@ body {
     font-family: sans-serif;
     background-color: #C4C5FF;
     color: #FFF;
-    
+}
+
+input{
+    background-color: #fff;
+    border-style: none;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 5px;
 }
 
 .grid-container{
@@ -14,28 +21,30 @@ body {
 
 .background-inputs{
     background-color: #413f6b;
-    border-radius: 15px;
-    border-style: solid;
-    border-color: #fff;
-    border-width: 3px;
+    /* round the corners */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    
 }
 
 .pink-background{
     background-color: #FCE9FF;
     color: #413F6B;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     
 }
 
 .title {
-    font-size: 30px;
+    font-size: 36px;
     font-family: "Genos", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: italic;
     color: #413f6b;
     text-align: center;
+    text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff,
+        1px 1px 5px #fce9ff, 1px 1px 5px #fce9ff;
 }
 
 .dp-button{
@@ -53,7 +62,7 @@ body {
     transition: opacity 0.15s;
     transition: box-shadow 0.15s;
     align-self: center;
-        
+    margin-right: 10px;  
 }
 
 .delete-button{
@@ -63,6 +72,7 @@ body {
     color:#ffffff;
     padding-top: 15px;
     padding-bottom: 15px;
+    margin-right: 10px;
 
     /* margin is the space around */
     font-size: 15px;
@@ -74,17 +84,34 @@ body {
         
 }
 
+
+/* round the edges of input-card */
+.input-card{
+    background-color: #C4C5FF;
+    color: #FFF;
+    margin-left: 10px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .nap-grid, .nap-input-grid{
     display: grid;
     grid-template-columns: 200px 150px 100px 140px 180px 120px;
-    column-gap: 12px;
-    row-gap: 12px;
+    column-gap: 5px;
+    row-gap: 5px;
     text-align: center;
     font-optical-sizing: auto;
 
-    padding-left: 10px;
-    padding-right:10px;
-    
+    padding: 10px 0;
+
+    /* bottom rounded corners */
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px
+
 }
 
 /* .nap-input-grid{
@@ -96,7 +123,7 @@ body {
     position: absolute;
     right: 0px;
     display: block;
-    padding-right: 10px;
+    padding-right: 25px;
 }
 
 .clock-icon{
