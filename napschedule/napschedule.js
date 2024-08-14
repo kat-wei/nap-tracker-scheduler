@@ -10,7 +10,7 @@ function saveTimes(){
     localStorage.setItem('bed-time', bedTime);
 
     //redirect to results page
-    window.location.href = 'results.html'
+    window.location.href = '/results.html'
 }
 
 //takes in string (wakeTime and bedTime) and MT to ST
