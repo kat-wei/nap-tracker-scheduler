@@ -60,7 +60,7 @@ function addNap() {
 
     // const inputQuality = document.querySelector('.js-nap-quality-input');
     const quality = `
-    <div class ="card">
+    <div class ="quality-card">
         ${getStarHTML(currentQualityRating)}
     </div>
     `

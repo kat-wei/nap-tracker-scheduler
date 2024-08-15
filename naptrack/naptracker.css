@@ -84,17 +84,30 @@ input{
         
 }
 
+/* background: #fff;
+    margin: 0 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem; */
 
 /* round the edges of input-card */
 .input-card{
     background-color: #C4C5FF;
     color: #FFF;
+    
     margin-left: 10px;
     border-radius: 5px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+.quality-card{
+    background: #C4C5FF;
+    margin: 0 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
 
 }
 

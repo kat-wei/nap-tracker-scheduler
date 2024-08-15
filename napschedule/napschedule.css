@@ -22,6 +22,11 @@ body {
     border-color: #413f6b;
     border-width: 3px;
     border-radius: 15px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .title {
@@ -51,6 +56,9 @@ body {
     padding-right: 90px;
     padding-top: 15px;
     padding-bottom: 15px;
+    display: block;
+    margin: 10px 0;
+    
 }
 .purple-button{
     background-color: #565678;
