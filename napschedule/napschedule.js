@@ -16,24 +16,23 @@ function saveTimes(){
 //takes in string (wakeTime and bedTime) and MT to ST
 function convertTime(time){
     let standard = Number(time);
-    if(standard<=12){
-        standard = standard.toString()+":00 AM";
+    let period = "AM";
+    if(standard === 0){
+        standard = 12;
     }
-    else {
-        standard = (standard-12).toString()+":00 PM"
+    else if(standard===12){
+        period = "PM";
     }
+    else if(standard>12){
+        standard = standard-12;
+        period = "PM";
+    }
+    standard = standard.toString()+":00 " + period;
     return standard;
 }
 
 wakeTime = localStorage.getItem('wake-time');
 bedTime = localStorage.getItem('bed-time');
-
-// .wake-box, .bed-box{
-//     color: #fff;
-//     background-color: #565678;
-//     width: 195px;
-//     height: 50px;
-// }
 
 document.querySelector('.js-wake-time').innerHTML = `
     <div class="wake-box">
